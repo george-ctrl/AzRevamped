@@ -2,10 +2,8 @@ package de.swm;
 
 import java.sql.*;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class SQLHandler {
     private String url;
@@ -13,12 +11,13 @@ public class SQLHandler {
     private String password;
     public static SQLHandler instance;
 
-    public static SQLHandler getInstance(String url, String user, String password) {
+   /* public static SQLHandler getInstance(String url, String user, String password) {
         if (instance == null) {
             instance = new SQLHandler(url, user, password);
         }
         return instance;
     }
+*/
 
     SQLHandler(String url, String user, String password) {
         this.url = url;
@@ -27,9 +26,9 @@ public class SQLHandler {
     }
 
     private Connection openConnection() throws SQLException {
-        Connection con = null;
+        Connection con;
         String jdbcConnectionString = "jdbc:mariadb://" + url + "/time";
-        con = (Connection) DriverManager.getConnection(jdbcConnectionString,
+        con = DriverManager.getConnection(jdbcConnectionString,
                 user,
                 password);
         return con;
@@ -61,7 +60,6 @@ public class SQLHandler {
                 }
             }
         }
-
     }
 
     public ArrayList<TimeModel> sqlGetTime(int userID) {

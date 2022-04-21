@@ -84,13 +84,5 @@ public class TimeTableModel extends AbstractTableModel {
         return timeModels.get(row);
     }
 
-
-
-
-
-
-
-
-
 }
 

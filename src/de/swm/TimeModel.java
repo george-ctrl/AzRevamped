@@ -10,7 +10,6 @@ import java.time.temporal.ChronoUnit;
 public class TimeModel {
     private int userId;
     private LocalTime timeStart;
-
     private LocalTime timeEnd;
     private double timeWorkedMinutes;
 

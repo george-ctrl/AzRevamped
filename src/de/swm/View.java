@@ -13,8 +13,6 @@ public class View {
     private JButton btnGetTime;
     private JTextField txtUserId;
 
-
-
     public View(){
         frame = new JFrame("TimeCalc");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,8 +45,6 @@ public class View {
         pnlTimeCalcRight.add(txtEnd);
         pnlTimeCalcRight.add(btnPushAndCalc);
         pnlTimeCalcRight.add(btnGetTime);
-
-
 
         frame.setSize(650, 600);
         frame.add(pnlTimeCalc);
